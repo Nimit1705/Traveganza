@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+
+
+:root{
+    font-size: 16px;
+    font-family: 'Ubuntu';
+    --text-primary:#b6b6b6;
+    --text-secondary:#ececec;
+    --bg-primary:#23232e;
+    --bg-secondary:#14141e;
+    --transition-speed:400ms;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    
+    color: #000;
+    background-color: #fff;
+}
+
+/* body::-webkit-scrollbar{
+    width: 0.25rem;
+}
+body::-webkit-scrollbar-track{
+    color: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    color: #6649b8;
+} */
+
+main{
+    margin-left: 5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute; */
+    /* background: linear-gradient(to bottom right,#fcf7ff 5%, #e0a3ff); */
+}
+
+.navbar{
+    z-index: 2;
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 200ms ease;
+}
+
+
+
+.navbar-nav{
+    list-style: none;
+    margin-left:0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+.nav-item{
+    width : 100%;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    filter:grayscale(100%) opacity(0.7);
+    transition: var(--transition-speed);
+}
+
+.nav-link:hover{
+    filter:grayscale(0%) opacity(1);
+    background: var(--bg-secondary);
+    color:var(--text-secondary);
+}
+
+.link-text{
+    font-size: 20px;
+    display: none;
+    margin-left: 1rem;
+}
+
+.nav-link svg{
+    min-width: 2rem;
+    margin:0 1.5rem;
+}
+
+.nav-link svg:hover{
+    color:#6649b8;
+    transition: var(--transition-speed);
+}
+
+
+.navbar:hover{
+    width: 16rem;
+}
+
+.navbar:hover .link-text{
+    display: block;
+
+}
+
+.logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color:var(--text-secondary);
+    background: var(--bg-secondary);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    width:100%;
+}
+
+.logo svg{
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed);
+}
+
+.navbar:hover .logo svg{
+    transform: rotate(-180deg);
+}
+
+.top-nav{
+    height: 5rem;
+    width: auto;
+    background:var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-heading{
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    color:#ececec;
+}
+
+.map-container{
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    z-index: 0;
+    position: relative;
+}
+.pin {
+    position: absolute;
+    width: 20px;
+    height: 30px;
+    color:red;
+    /* background-color: red;
+    border-radius: 50%; */
+    z-index: 1;
+    transform: translate(-50%, -50%);
+}
+.tooltip{
+    position: absolute;
+    z-index: 2;
+    height: 100px;
+    width: 200px;
+    background-color: #ececec;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding:3%;
+    visibility: hidden;
+}
+.tooltip-image{
+    margin:3%;
+}
+.tooltip-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+.tooltip-text > .heading{
+    color:var(--bg-secondary);
+    font-family: 'Kanit', sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    /* margin-left: 15%; */
+    margin-bottom: 10%;
+    position: relative;
+}
+.tooltip-text > .desc{
+    color:var(--bg-primary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-left: 15%;
+    position: relative;
+}
+
+.pin:hover .tooltip{
+    color:#6649b8;
+    visibility: visible;
+}
+
+.pin:hover{
+    color:#6649b8;
+}
+
+.map{
+    z-index: 0;
+    justify-self: center;
+    align-self: center;
+    margin: 10px 5px;
+    /* height: 100%;
+    width: 100%; */
+    border-radius: 20px;
+    border:#6649b8 solid 5px;
+}
