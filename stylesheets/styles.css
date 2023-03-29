@@ -159,7 +159,10 @@ main{
     margin-top: 80px;
     margin-bottom: 60px;
 }
-
+#guitar {
+    height: 165px;
+    width: 248px;
+}
 .place-holder{
     display: flex;
    
